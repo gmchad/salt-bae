@@ -13,11 +13,11 @@ address = keccak256( 0xff ++ address ++ salt ++ keccak256(init_code))[12:]
 
 ### Usage
 ```
-node index.js [deployAddress] [byteCode] [start] [target]
+node index.js [deployAddress] [byteCodeHash] [start] [target]
 ```
 
 [deployAddress] -  deployer factory contract address  
-[byteCode] - hashed bytecode (keccak256(init_code))  
+[byteCodeHash] - hashed bytecode
 [start] - target start index
 [target] - hex substring the address should contain
 
