@@ -9,12 +9,12 @@ var start = args[2]
 var target = args[3]
 
 if (!deployAddress || !byteCodeHash || !start || !target) {
-   console.log("usage: [deployAddress] [byteCode] [start] [target]")
+   console.log("usage: [deployAddress] [byteCodeHash] [start] [target]")
    return
 }
 
 console.log("deployAddress: " + deployAddress)
-console.log("byteCode: " + byteCodeHash)
+console.log("byteCodeHash: " + byteCodeHash)
 console.log("start: " + start)
 console.log("target: " + target)
 
@@ -23,7 +23,7 @@ deployAddress = "ff".concat(deployAddress.slice(2))
 byteCodeHash = byteCodeHash.slice(2)
 
 console.log("deployAddress: " + deployAddress)
-console.log("byteCode: " + byteCodeHash)
+console.log("byteCodeHash: " + byteCodeHash)
 
 var start = new Date()
 
