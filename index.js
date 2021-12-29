@@ -4,26 +4,26 @@ const eth = require('ethereumjs-util')
 
 const args = process.argv.slice(2)
 var deployAddress = args[0]
-var byteCode = args[1]
+var byteCodeHash = args[1]
 var start = args[2]
 var target = args[3]
 
-if (!deployAddress || !byteCode || !start || !target) {
+if (!deployAddress || !byteCodeHash || !start || !target) {
    console.log("usage: [deployAddress] [byteCode] [start] [target]")
    return
 }
 
 console.log("deployAddress: " + deployAddress)
-console.log("byteCode: " + byteCode)
+console.log("byteCode: " + byteCodeHash)
 console.log("start: " + start)
 console.log("target: " + target)
 
 // split off the 0x
 deployAddress = "ff".concat(deployAddress.slice(2))
-byteCode = byteCode.slice(2)
+byteCodeHash = byteCodeHash.slice(2)
 
 console.log("deployAddress: " + deployAddress)
-console.log("byteCode: " + byteCode)
+console.log("byteCode: " + byteCodeHash)
 
 var start = new Date()
 
@@ -33,7 +33,7 @@ for (var i = 0; i < Number.MAX_SAFE_INTEGER; i++) {
    var salt = i.toString(16).padStart(64, '0')
 
    // 2. Concatenate this between the other 2 strings
-   var concatString = deployAddress.concat(salt).concat(byteCode)
+   var concatString = deployAddress.concat(salt).concat(byteCodeHash)
 
    // 3. Hash the resulting string
    var hash = eth.keccak256(Buffer.from(concatString, "hex"))
