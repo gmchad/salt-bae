@@ -1,0 +1,11 @@
+{
+  "name": "salt-bae",
+  "version": "1.0.0",
+  "description": "find a salt for a cool CREATE2 address",
+  "main": "index.js",
+  "author": "salt bae",
+  "license": "MIT",
+  "dependencies": {
+    "ethereumjs-util": "^7.1.3"
+  }
+}
